@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Bookmark App</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-pP6M+3H5bHB1EytLqF14j5Fj1Fz3vNfTnW9B/xPIu+G0H8z4gLkJTV3ODkeK7y9Xl0lN/lF2dcxF6AxZmrkL8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<header>
+    <h1>Bookmark App</h1>
+</header>
+
+<div class="container">
+    <form id="bookmark-form">
+        <input type="text" id="bm-title" placeholder="Titre" required>
+        <input type="url" id="bm-url" placeholder="URL" required>
+        <input type="text" id="bm-desc" placeholder="Description">
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <table id="bookmark-list">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>URL</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les bookmarks apparaîtront ici -->
+        </tbody>
+    </table>
+</div>
+
+<script type="module" src="js/bookmark.js?v=2"></script>
+</body>
+</html>
