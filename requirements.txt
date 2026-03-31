@@ -6,3 +6,4 @@ flask-marshmallow
 marshmallow
 python-dotenv
 gunicorn
+psycopg2-binary
