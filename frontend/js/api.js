@@ -1,5 +1,5 @@
 // Remplace par l'IP réelle où tourne Flask
-const API_URL = "https://bookmark-4max.onrender.com/bookmarks/";
+const API_URL = "https://bookmark-backend-staging.onrender.com/bookmarks/";
 
 // GET
 export async function getBookmarks() {
