@@ -20,9 +20,6 @@ def init_app(app):
     Lie toutes les extensions à l'application Flask.
     À appeler dans app/__init__.py ou run.py après création de l'objet Flask.
     """
-    # Configurer SQLAlchemy
-    app.config['SQLALCHEMY_DATABASE_URI'] = app.config.get('DATABASE_URL')
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     # Initialiser les extensions
     db.init_app(app)

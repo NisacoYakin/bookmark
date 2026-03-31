@@ -1,27 +1,19 @@
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 class Config:
-    ENV = os.getenv("ENV", "dev")
-    if ENV not in ["dev", "staging", "prod"]:
-        raise ValueError("ENV must be 'dev', 'staging', or 'prod'")
+    ENV = os.getenv("ENV")
 
-    DATABASES = {
-        "dev": os.getenv("DATABASE_URL_DEV"),
-        "staging": os.getenv("DATABASE_URL_STAGING"),
-        "prod": os.getenv("DATABASE_URL_PROD")
-    }
+    if not ENV:
+        raise ValueError("ENV is not set")
 
-    SQLALCHEMY_DATABASE_URI = DATABASES.get(ENV)
-    if SQLALCHEMY_DATABASE_URI is None:
-        raise ValueError(f"No database configured for environment: {ENV}")
+    DATABASE_URL = os.getenv("DATABASE_URL")
 
-    SQLALCHEMY_TRACK_MODIFICATIONS = False  # ⚡ Recommandé pour éviter les warnings
+    if not DATABASE_URL:
+        raise ValueError("DATABASE_URL is not set")
+
+    SQLALCHEMY_DATABASE_URI = DATABASE_URL
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     @classmethod
     def debug(cls):
-        print(f"[CONFIG] ENV={cls.ENV}, DATABASE_URL={cls.SQLALCHEMY_DATABASE_URI[:50]}...")
-
-
+        print(f"[CONFIG] ENV={cls.ENV}, DB={cls.SQLALCHEMY_DATABASE_URI[:50]}...")
