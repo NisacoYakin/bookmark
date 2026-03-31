@@ -1,5 +1,5 @@
 // Remplace par l'IP réelle où tourne Flask
-const API_URL = "http://10.76.30.145:5000/bookmarks/";
+const API_URL = "http://10.77.76.66:5000/bookmarks/";
 
 // GET
 export async function getBookmarks() {
